@@ -22,5 +22,4 @@ $ cd osint_v3_pkg
 
 $ python3 osint_v3.py 3275124308050003 +6281234567890
 
-Output:
-- report_TIMESTAMP.html (buka di browser)
+gunakan tools ini dengan bijak, tools ini hanya untuk pengetesan dan pengembangan
