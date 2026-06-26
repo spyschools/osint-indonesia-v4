@@ -1,39 +1,114 @@
-# osint-indonesia-v3
-Tools OSINT Indonesia, untuk cek NIK & No HP. Script ini tidak akan ambil data dari database ilegal, tapi hanya dari sumber OSINT publik.
+# OSINT Indonesia v4
 
-Files:
-- osint_v3.py         (main scanner with multi-threaded Google dorking)
-- kode_wilayah.json   (provinsi/kabupaten/kecamatan full)
-- README.md
+OSINT Indonesia v4 adalah tools berbasis Python untuk melakukan pencarian informasi dari **sumber OSINT (Open Source Intelligence) publik** menggunakan data seperti **NIK** dan **Nomor Handphone Indonesia**.
 
-$ sudo apt update && sudo apt install python3 python3-pip -y
+> **Disclaimer:** Tools ini **tidak mengambil data dari database ilegal, hasil kebocoran data (data breach), ataupun database privat**. Seluruh hasil berasal dari sumber informasi publik yang tersedia di internet.
 
-$ git clone https://github.com/spyschools/osint-indonesia-v3.git
+---
 
-$ cd osint-indonesia-v3
+## Features
 
-$ pip3 install requests beautifulsoup4
+* 🔍 Pencarian berdasarkan NIK Indonesia
+* 📱 Pencarian berdasarkan Nomor Handphone Indonesia
+* ⚡ Multi-threaded Google Dork Scanner
+* 🗺️ Decode kode wilayah Indonesia (Provinsi, Kabupaten/Kota, Kecamatan)
+* 📄 Generate laporan HTML otomatis
+* 🐍 Dibuat menggunakan Python 3
 
-Jalankan scanner contoh:
-$ python3 osint_v3.py 3208074509870004
+---
 
-$ python3 osint_v3.py 3275124308050003 +6281234567890
+## Files
 
-*UPDATE
-$ python3 osint_builder.py
+```
+osint-indonesia-v4/
+│
+├── osint_v4.py          # Main scanner
+├── kode_wilayah.json    # Database kode wilayah Indonesia
+└── README.md
+```
 
-$ unzip osint_v3.zip -d osint_v3_pkg
+---
 
-$ cd osint_v3_pkg
+## Installation
 
-$ python3 osint_v3.py 3275124308050003 +6281234567890
+Install Python dan pip:
 
-Output:
-- report_TIMESTAMP.html (buka di browser)
+```bash
+sudo apt update
+sudo apt install python3 python3-pip -y
+```
 
-Notes:
-- Google scraping dapat rate-limit; gunakan bijak.
-- Jika API wilayah.id berubah, generator bisa gagal; kamu bisa isi kode_wilayah.json manual.
-- gunakan tools ini dengan bijak, tools ini hanya untuk pengetesan dan pengembangan
+Clone repository:
 
-gunakan tools ini dengan bijak, tools ini hanya untuk pengetesan dan pengembangan
+```bash
+git clone https://github.com/spyschools/osint-indonesia-v4.git
+cd osint-indonesia-v4
+chmod +x *
+```
+
+Install dependency:
+
+```bash
+pip3 install requests beautifulsoup4
+```
+
+---
+
+## Usage
+
+Scan menggunakan NIK:
+
+```bash
+python3 osint_v4.py 3208074509870004
+```
+
+Scan menggunakan NIK dan Nomor HP:
+
+```bash
+python3 osint_v4.py 3275124308050003 +6281234567890
+```
+
+---
+
+## Output
+
+Setelah proses selesai akan dihasilkan file laporan:
+
+```
+report_TIMESTAMP.html
+```
+
+Buka file tersebut menggunakan browser.
+
+---
+
+## Notes
+
+* Google dapat menerapkan **rate limit** terhadap scraping. Gunakan tools ini secara wajar.
+* Jika API **wilayah.id** berubah atau tidak tersedia, proses generator `kode_wilayah.json` dapat gagal. Anda dapat mengisi file tersebut secara manual.
+* Hasil pencarian bergantung pada informasi yang tersedia secara publik di internet.
+* Akurasi hasil tidak dijamin 100%.
+
+---
+
+## Disclaimer
+
+Project ini dibuat **hanya untuk tujuan edukasi, penelitian keamanan (security research), pengujian, dan pengembangan perangkat lunak**.
+
+Pengguna bertanggung jawab penuh atas penggunaan tools ini. Penulis tidak bertanggung jawab atas penyalahgunaan, pelanggaran hukum, maupun aktivitas yang melanggar privasi pihak lain.
+
+Gunakan tools ini dengan **bijak, bertanggung jawab, dan sesuai dengan hukum yang berlaku**.
+
+---
+
+## License
+
+MIT License
+
+---
+
+## Author
+
+**Spy Schools**
+
+GitHub: https://github.com/spyschools
