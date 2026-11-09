@@ -59,13 +59,13 @@ pip3 install requests beautifulsoup4
 Scan menggunakan NIK:
 
 ```bash
-python3 osint_v4.py 3208074509870004
+python3 osint_v4.py 320..........
 ```
 
 Scan menggunakan NIK dan Nomor HP:
 
 ```bash
-python3 osint_v4.py 3275124308050003 +6281234567890
+python3 osint_v4.py 320......... +6281..........
 ```
 
 ---
